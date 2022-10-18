@@ -1,0 +1,35 @@
+.imgSize{
+    width: 2rem;
+    height: auto;
+    padding: 0.5rem;
+}
+.hourCard{
+    height: 60px;
+}
+.absolute{
+    background-color: rgb(3, 155, 229);
+    color: white;
+    position: absolute;
+    border-color: white;
+    border: solid;
+    font-size: 11px;
+    padding-left: 0.5rem;
+    z-index: 2;
+    border-radius: 0.7rem;
+}
+.titleCalendar{
+    color: #0276d3;
+    font-weight: bold;
+    font-size: 14px;
+}
+.redLineStyle{
+    border-block-color: #BD2929;
+    width: 80%;
+    position: absolute;
+    left: 18%;
+    z-index: 10;
+  
+}
+.sizeCircle{
+    width: 0.7rem;
+}

@@ -1,0 +1,68 @@
+<template>
+
+    <lightning-card>
+        
+        <div class="slds-grid slds-gutters slds-m-horizontal_x-small slds-m-bottom_small">
+            <div class="slds-col slds-size_2-of-3 slds-text-body_regular">
+              <span class="titleCalendar" >{formatedDate}</span>
+            </div>
+            <div class="slds-col slds-size_1-of-3" onclick={navigateToCalandar}>
+              <span><img class="slds-float_right imgSize" src={redirectIcon} ></span>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap slds-m-horizontal_small">
+            
+            <div class="slds-col slds-size_4-of-12" >
+                <img class="slds-float_right imgSize" src={yesterdayIcon} onclick={subtractDay} >
+             </div>
+             <div class="slds-col slds-size_4-of-12 slds-align_absolute-center" >
+                <button class="slds-button slds-p-bottom_x-small" onclick={todayHandler}><b> Today </b></button>
+            </div>
+             <div class="slds-col slds-size_4-of-12">
+                 <img class="imgSize" src={tomorrowIcon} onclick={addDay} >
+             </div>
+             
+        </div>
+       
+        <hr>
+            <div class=" slds-border_top slds-float_right slds-p-around_small redLineStyle" style={positionRedline}></div>
+                
+           
+            <template if:true={listCopy}>
+
+                <template for:each={listCopy} for:item="event">
+
+                    <div key={event.Subject} class="absolute" style={event.Style} >
+                        <div class="slds-float_left" > 
+                         {event.Subject} with {event.Contact}, {event.Time}
+                        </div>
+                    </div>
+                
+                </template>
+            </template>
+    
+            <template if:true={dayHours}>
+                <template for:each={dayHours} for:item="hour">
+
+                    <div key={hour}  class="slds-grid slds-wrap  hourCard slds-is-relative">
+                        <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                            <span class="slds-text-body_regular">{hour}</span>
+                        </div>
+                        <div class="slds-col slds-size_10-of-12 slds-p-around_x-small slds-is-relative">
+                            <span class="slds-is-relative"> <div class="slds-border_top"></div> </span>
+                        </div>
+                   </div>
+                
+                   
+                </template>
+            </template>   
+        
+             
+
+            
+      
+    </lightning-card>
+
+    
+        
+</template>
